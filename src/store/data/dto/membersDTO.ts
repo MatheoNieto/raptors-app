@@ -1,5 +1,6 @@
 export type MembersDTO = {
   id: string;
+  dni: string;
   name: string;
   email: string;
   birthDate: string;
