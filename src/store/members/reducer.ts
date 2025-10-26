@@ -11,7 +11,9 @@ const INITIAL_STATE: State = {
 };
 
 const membersReducer = createReducer(INITIAL_STATE, builder => {
-  builder.addCase(memberActions.addMember, (state, action) => {});
+  builder.addCase(memberActions.addMember, (state, action) => {
+    state.members.push(action.payload.member);
+  });
 });
 
 export type MemberState = ReturnType<typeof membersReducer>;

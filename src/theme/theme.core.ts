@@ -53,6 +53,7 @@ const theme = createTheme({
     grey900: palette.base900,
 
     errorAlert: palette.error500,
+    lightGray: palette.lightGray,
 
     disabled: Color(palette.primary500).alpha(0.4).rgb().string(),
   },
