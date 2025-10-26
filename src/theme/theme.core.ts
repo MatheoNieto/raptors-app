@@ -7,6 +7,7 @@ import {
   inputVariants,
   textVariants,
 } from '@theme/variants';
+import Color from 'color';
 
 const theme = createTheme({
   colors: {
@@ -36,6 +37,24 @@ const theme = createTheme({
     error500: palette.error500,
     grayIcon: palette.grayIcon,
     textPrimary: palette.base900,
+    primaryBlue: palette.primaryBlue,
+
+    input: palette.base0,
+    inputBorder: palette.base100,
+    inputBorderFocused: palette.base400,
+    inputDisabled: palette.base50,
+
+    grey100: palette.base100,
+    grey200: palette.base200,
+    grey25: palette.base25,
+    grey300: palette.base300,
+    grey400: palette.base400,
+    grey50: palette.base50,
+    grey900: palette.base900,
+
+    errorAlert: palette.error500,
+
+    disabled: Color(palette.primary500).alpha(0.4).rgb().string(),
   },
   spacing: {
     //@ts-ignore allow unset props

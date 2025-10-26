@@ -5,7 +5,7 @@ import FieldInput from '@components/forms/FieldInput';
 import {formKeys, forms} from '../constants/form';
 
 const CreateEditMemberFormComponent = () => {
-  const {isValid, handleSubmit} = useFormikContext<any>();
+  const {handleSubmit} = useFormikContext<any>();
 
   return (
     <Box>
@@ -53,9 +53,9 @@ const CreateEditMemberFormComponent = () => {
       />
 
       <Button
+        variant="solid"
         mt="s"
         mb="xl"
-        isDisabled={!isValid}
         onPress={handleSubmit.bind(null, undefined)}>
         Guardar
       </Button>

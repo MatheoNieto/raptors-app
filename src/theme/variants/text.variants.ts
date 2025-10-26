@@ -7,6 +7,12 @@ const textVariants = {
     letterSpacing: 0.049,
     fontSize: 14,
   },
+  bodyFooter: {
+    fontWeight: '500',
+    fontSize: 8,
+    lineHeight: 14,
+    textTransform: 'uppercase',
+  },
 };
 
 export default textVariants;

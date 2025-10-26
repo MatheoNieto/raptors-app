@@ -6,10 +6,13 @@ import {MembersStackProps, RoutesMembers} from '../navigation/types';
 export const ListMembers = () => {
   const navigation = useNavigation<MembersStackProps>();
   return (
-    <Box>
+    <Box p="m">
       <Text>List Members Screen</Text>
 
-      <Button onPress={() => navigation.navigate(RoutesMembers.CREATE_MEMBER)}>
+      <Button
+        my="m"
+        variant="solid"
+        onPress={() => navigation.navigate(RoutesMembers.CREATE_MEMBER)}>
         Crear Miembro
       </Button>
     </Box>

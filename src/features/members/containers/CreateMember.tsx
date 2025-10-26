@@ -7,14 +7,18 @@ import {useAppDispatch} from '@hooks/useStore';
 import {memberActions} from '@store/members';
 import * as Yup from 'yup';
 import {MemberMapper} from '@store/data/mappers/memberMapper';
+import {MembersStackProps, RoutesMembers} from '../navigation/types';
+import {useNavigation} from '@react-navigation/native';
 
 export const CreateMember = () => {
   const dispatch = useAppDispatch();
+  const navigation = useNavigation<MembersStackProps>();
 
   const handleSubmit = (
     values: Yup.InferType<typeof forms.createEditMember.schema>,
   ) => {
     dispatch(memberActions.addMember({member: MemberMapper.toDTO(values)}));
+    navigation.navigate(RoutesMembers.LIST_MEMBERS);
   };
 
   return (

@@ -14,6 +14,7 @@ const buttonVariants = {
     fontWeight: '600',
     fontSize: 17,
     letterSpacing: 0.049,
+    width: '100%',
   },
   solid: {
     backgroundColor: 'primaryBlue',

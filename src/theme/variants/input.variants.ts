@@ -13,6 +13,13 @@ const inputVariants = {
     borderWidth: 1,
     borderColor: 'inputBorder',
   },
+  focused: {
+    borderColor: 'inputBorderFocused',
+    fontWeight: '700',
+  },
+  error: {
+    borderColor: 'errorAlert',
+  },
 };
 
 export default inputVariants;
