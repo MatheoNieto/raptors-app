@@ -1,4 +1,6 @@
 import * as Yup from 'yup';
+import {bloodTypes} from './bloodType';
+import {gender} from './gender';
 
 export const formKeysMember = {
   name: 'name',
@@ -8,6 +10,8 @@ export const formKeysMember = {
   siteAddress: 'siteAddress',
   serviceHealth: 'serviceHealth',
   birthDate: 'birthDate',
+  gender: 'gender',
+  bloodTypes: 'bloodTypes',
 };
 
 export const createOrEditMemberProperties = {
@@ -19,6 +23,8 @@ export const createOrEditMemberProperties = {
     [formKeysMember.siteAddress]: '',
     [formKeysMember.serviceHealth]: '',
     [formKeysMember.birthDate]: '',
+    [formKeysMember.gender]: '',
+    [formKeysMember.bloodTypes]: '',
   },
   initialErrors: {},
   labels: {
@@ -29,6 +35,8 @@ export const createOrEditMemberProperties = {
     [formKeysMember.siteAddress]: 'Dirección',
     [formKeysMember.serviceHealth]: 'EPS',
     [formKeysMember.birthDate]: 'Fecha de nacimiento',
+    [formKeysMember.gender]: 'Genero',
+    [formKeysMember.bloodTypes]: 'Tipo de sangre',
   },
   schema: Yup.object({
     [formKeysMember.name]: Yup.string().required('Ingresa el nombre'),
@@ -38,9 +46,12 @@ export const createOrEditMemberProperties = {
     [formKeysMember.email]: Yup.string()
       .email('Ingresa un correo electrónico válido')
       .required('Ingresa el correo electrónico'),
-    [formKeysMember.phone]: Yup.string(),
-    [formKeysMember.siteAddress]: Yup.string(),
     [formKeysMember.serviceHealth]: Yup.string().required('Ingresa la EPS'),
     [formKeysMember.birthDate]: Yup.string().required('Fecha de nacimiento.'),
+
+    [formKeysMember.phone]: Yup.string(),
+    [formKeysMember.siteAddress]: Yup.string(),
+    [formKeysMember.gender]: Yup.string().oneOf(gender),
+    [formKeysMember.bloodTypes]: Yup.string().oneOf(bloodTypes),
   }),
 };

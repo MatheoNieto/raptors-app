@@ -21,13 +21,13 @@ const Dropdown: React.FC<Props> = ({value, onChange, label, data, ...rest}) => {
       </Text>
 
       <DropdownComponent
+        search
         {...rest}
         style={[styles.dropdown, isFocus && {borderColor: '#4A90E2'}]}
         placeholderStyle={styles.placeholderStyle}
         selectedTextStyle={styles.selectedTextStyle}
         itemTextStyle={{fontSize: 14}}
         data={data}
-        search
         maxHeight={150}
         labelField="label"
         valueField="value"

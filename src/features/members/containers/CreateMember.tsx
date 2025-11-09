@@ -27,8 +27,11 @@ export const CreateMember = () => {
       as={KeyboardAwareScrollView}
       keyboardShouldPersistTaps="handled"
       enableOnAndroid
-      showsVerticalScrollIndicator={false}>
-      <Box p="m" backgroundColor="white" flex={1}>
+      showsVerticalScrollIndicator={false}
+      extraScrollHeight={80}
+      contentContainerStyle={{paddingBottom: 60}}
+      backgroundColor="white">
+      <Box p="m">
         <Formik
           initialValues={forms.createEditMember.initialValues}
           initialErrors={forms.createEditMember.initialErrors}

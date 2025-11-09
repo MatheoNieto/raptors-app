@@ -5,8 +5,10 @@ import FieldInput from '@components/forms/FieldInput';
 import {formKeys, forms} from '../constants/form';
 import FieldSelect from '@components/forms/FieldSelect';
 import {EpsMapper} from '../data/mappers/EpsMapper';
-import {EPS} from '../constants';
+import {bloodTypes, EPS, gender} from '../constants';
 import FieldDate from '@components/forms/FieldDate';
+import {GenderMapper} from '../data/mappers/genderMapper';
+import {BloodTypeMapper} from '../data/mappers/bloodTypeMapper';
 
 const CreateEditMemberFormComponent = () => {
   const {handleSubmit} = useFormikContext<any>();
@@ -35,8 +37,7 @@ const CreateEditMemberFormComponent = () => {
           forms.createEditMember.labels[formKeys.createEditMember.serviceHealth]
         }
         data={EpsMapper.toOption(EPS)}
-        value={undefined}
-        labelField={'value'}
+        labelField={'label'}
         valueField={'value'}
         isRequired
       />
@@ -49,6 +50,28 @@ const CreateEditMemberFormComponent = () => {
         }
         returnKeyType="next"
         mt="m"
+      />
+
+      <FieldSelect
+        name={formKeys.createEditMember.gender}
+        label={forms.createEditMember.labels[formKeys.createEditMember.gender]}
+        data={GenderMapper.toOption(gender)}
+        labelField={'label'}
+        search={false}
+        valueField={'value'}
+        isRequired
+      />
+
+      <FieldSelect
+        name={formKeys.createEditMember.bloodTypes}
+        label={
+          forms.createEditMember.labels[formKeys.createEditMember.bloodTypes]
+        }
+        data={BloodTypeMapper.toOption(bloodTypes)}
+        labelField={'label'}
+        search={false}
+        valueField={'value'}
+        isRequired
       />
 
       <FieldInput
