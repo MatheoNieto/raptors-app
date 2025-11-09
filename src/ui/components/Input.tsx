@@ -212,8 +212,8 @@ const Input = forwardRef<InputProps, typeof TextInput>(
           <Box flex={1}>
             <Text
               as={Animated.Text}
+              variant="labelField"
               position="absolute"
-              color="grey400"
               style={{
                 top: labelAnimation.interpolate({
                   inputRange: [0, 1],

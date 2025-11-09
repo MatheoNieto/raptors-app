@@ -3,6 +3,10 @@ import React from 'react';
 import {Box, Text, Button} from '@ui/components';
 import FieldInput from '@components/forms/FieldInput';
 import {formKeys, forms} from '../constants/form';
+import FieldSelect from '@components/forms/FieldSelect';
+import {EpsMapper} from '../data/mappers/EpsMapper';
+import {EPS} from '../constants';
+import FieldDate from '@components/forms/FieldDate';
 
 const CreateEditMemberFormComponent = () => {
   const {handleSubmit} = useFormikContext<any>();
@@ -25,6 +29,27 @@ const CreateEditMemberFormComponent = () => {
         returnKeyType="next"
         mt="m"
       />
+      <FieldSelect
+        name={formKeys.createEditMember.serviceHealth}
+        label={
+          forms.createEditMember.labels[formKeys.createEditMember.serviceHealth]
+        }
+        data={EpsMapper.toOption(EPS)}
+        value={undefined}
+        labelField={'value'}
+        valueField={'value'}
+        isRequired
+      />
+
+      <FieldDate
+        isRequired
+        name={formKeys.createEditMember.birthDate}
+        label={
+          forms.createEditMember.labels[formKeys.createEditMember.birthDate]
+        }
+        returnKeyType="next"
+        mt="m"
+      />
 
       <FieldInput
         isRequired
@@ -43,7 +68,6 @@ const CreateEditMemberFormComponent = () => {
       />
 
       <FieldInput
-        isRequired
         name={formKeys.createEditMember.siteAddress}
         label={
           forms.createEditMember.labels[formKeys.createEditMember.siteAddress]

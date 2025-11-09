@@ -13,6 +13,9 @@ const textVariants = {
     lineHeight: 14,
     textTransform: 'uppercase',
   },
+  labelField: {
+    color: 'grey400',
+  },
 };
 
 export default textVariants;

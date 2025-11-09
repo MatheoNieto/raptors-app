@@ -6,4 +6,5 @@ export type MembersDTO = {
   birthDate: string;
   startDate: string;
   role: string;
+  serviceHealth: string;
 };
