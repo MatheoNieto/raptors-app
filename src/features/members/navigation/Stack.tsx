@@ -1,6 +1,10 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import {CreateMemberScreen, ListMembersScreen} from '../screens';
+import {
+  CreateMemberScreen,
+  ListMembersScreen,
+  MemberDetailScreen,
+} from '../screens';
 import {MembersParamsList, RoutesMembers} from './types';
 
 export const MembersStack = () => {
@@ -18,6 +22,14 @@ export const MembersStack = () => {
       <Screen
         name={RoutesMembers.CREATE_MEMBER}
         component={CreateMemberScreen}
+        options={{
+          title: '',
+        }}
+      />
+
+      <Screen
+        name={RoutesMembers.DETAIL_MEMBER}
+        component={MemberDetailScreen}
         options={{
           title: '',
         }}

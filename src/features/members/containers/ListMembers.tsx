@@ -3,12 +3,12 @@ import {Box, Button, Text} from '@ui/components';
 import React from 'react';
 import {MembersStackProps, RoutesMembers} from '../navigation/types';
 import {useAppSelector} from '@hooks/useStore';
-import {membersList} from '@store/members/selectors';
+import {membersListSelector} from '@store/members/selectors';
 import {FlatList} from 'react-native';
 import CardMember from '../components/CardMember';
 
 export const ListMembers = () => {
-  const members = useAppSelector(state => membersList(state));
+  const members = useAppSelector(state => membersListSelector(state));
   const navigation = useNavigation<MembersStackProps>();
 
   console.log('Members:', members);

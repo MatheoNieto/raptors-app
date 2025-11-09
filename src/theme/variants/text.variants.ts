@@ -16,6 +16,10 @@ const textVariants = {
   labelField: {
     color: 'grey400',
   },
+  regularMedium: {
+    fontSize: 20,
+    my: 's',
+  },
 };
 
 export default textVariants;

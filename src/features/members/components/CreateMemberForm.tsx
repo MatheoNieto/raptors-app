@@ -11,7 +11,7 @@ import {GenderMapper} from '../data/mappers/genderMapper';
 import {BloodTypeMapper} from '../data/mappers/bloodTypeMapper';
 
 const CreateEditMemberFormComponent = () => {
-  const {handleSubmit} = useFormikContext<any>();
+  const {handleSubmit, isValid} = useFormikContext<any>();
 
   return (
     <Box>
@@ -103,6 +103,7 @@ const CreateEditMemberFormComponent = () => {
         variant="solid"
         mt="s"
         mb="xl"
+        isDisabled={!isValid}
         onPress={handleSubmit.bind(null, undefined)}>
         Guardar
       </Button>

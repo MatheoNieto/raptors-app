@@ -37,7 +37,7 @@ const Dropdown: React.FC<Props> = ({value, onChange, label, data, ...rest}) => {
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
         onChange={item => {
-          onChange(item.value);
+          onChange(item);
           setIsFocus(false);
         }}
       />

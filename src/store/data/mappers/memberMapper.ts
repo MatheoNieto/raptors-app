@@ -6,6 +6,9 @@ export class MemberMapper {
   static toDTO(
     member: Yup.InferType<typeof forms.createEditMember.schema>,
   ): MembersDTO {
-    return member as MembersDTO;
+    return {
+      id: member.dni ?? String(Math.random()),
+      ...member,
+    } as MembersDTO;
   }
 }
